@@ -4,7 +4,7 @@
     <div class="container mt-3 mt-sm-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <team-form :team="team" teamBtnTitle="Make Team" @team-is-created-updated="submitTeam"></team-form>
+          <team-form :team="team" teamBtnTitle="Update Team" @team-is-created-updated="updateTeam"></team-form>
         </div><!-- /col -->
       </div><!-- /row -->
     </div><!-- /container -->
@@ -18,16 +18,33 @@ import TeamForm from '@/components/TeamForm'
 export default {
   data () {
     return {
-      team: {name: '', city: '', numPlayer: 0, championships: 0, rank: 0, message: ''},
-      messagetitle: ' Make Team '
+      team: {},
+      messagetitle: 'Update Team',
+      temp: {},
+      childDataLoaded: false
     }
   },
   components: {
     'team-form': TeamForm
   },
+  created () {
+    this.getTeam()
+  },
   methods: {
-    submitTeam: function (team) {
-      TeamService.postTeam(team)
+    getTeam: function () {
+      TeamService.fetchTeam(this.$router.params)
+        .then(response => {
+          this.temp = response.data
+          this.team = this.temp[0]
+          this.childDataLoaded = true
+        })
+        .catch(error => {
+          this.errors.push(error)
+          console.log(error)
+        })
+    },
+    updateTeam: function (team) {
+      TeamService.putTeam(this.$router.params, team)
         .then(response => {
           console.log(response)
         })

@@ -5,7 +5,7 @@ import Teams from '@/components/Teams'
 import AddTeam from '@/components/Addteam'
 import AboutUs from '@/components/AboutUs'
 import ContactUs from '@/components/ContactUs'
-
+import Edit from '@/components/Edit'
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +33,12 @@ export default new Router({
       path: '/contact',
       name: 'ContactUs',
       component: ContactUs
+    },
+    {
+      path: '/edit',
+      name: 'Edit',
+      component: Edit,
+      props: true
     }
   ]
 })
