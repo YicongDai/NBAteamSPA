@@ -6,6 +6,7 @@ import AddTeam from '@/components/Addteam'
 import AboutUs from '@/components/AboutUs'
 import ContactUs from '@/components/ContactUs'
 import Edit from '@/components/Edit'
+import Login from '@/components/Login'
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +40,11 @@ export default new Router({
       name: 'Edit',
       component: Edit,
       props: true
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

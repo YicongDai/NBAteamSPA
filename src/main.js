@@ -7,6 +7,11 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueSweetalert2 from 'vue-sweetalert2'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+Vue.use(ElementUI)
 Vue.use(BootstrapVue)
 Vue.use(VueSweetalert2)
 Vue.config.productionTip = false

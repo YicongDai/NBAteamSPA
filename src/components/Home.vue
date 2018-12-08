@@ -5,10 +5,10 @@
     <table align="center">
       <tr>
         <td>
-          <p class="lead"><b><i>Time for a change !!</i></b>
-          <p>Out with Boring Prumt - Giving has never been so easy.</p>
+          <p class="lead"><b><i> Welcome to NBAteam website!!</i></b>
+          <p>DO you have your favourite teams?</p>
           <p>Just click <a href ="#/teams">here</a> to go to</p>
-          <p>the team page and support your team</p>
+          <p>the team page and view your team</p>
         </td>
         <td>
           <img src="../assets/homer.gif" alt="description here" />
@@ -17,7 +17,7 @@
     </table>
 
     <p></p>
-    <p class="lead">This is the homepage of your <b>MEVN</b> Web app</p>
+    <p class="lead">This is the homepage of my <b>MEVN</b> Web app</p>
   </div>
 </template>
 
