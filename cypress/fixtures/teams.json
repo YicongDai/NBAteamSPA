@@ -1,5 +1,28 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+{"name": "Los Angeles Lakers",
+    "city": "Los Angeles",
+    "numPlayer": 20,
+    "championships": 16,
+    "rank": 100},
+  {
+    "name": "Cleveland Cavaliers",
+    "city": "Cleveland",
+    "numPlayer": 20,
+    "championships": 20,
+    "rank": 4
+  },
+  {
+    "name": "Los Angeles Cippers",
+    "city": "Los Angeles ",
+    "numPlayer": 20,
+    "championships": 20,
+    "rank": 10
+  },
+  {
+    "name": "Golden State Warriors",
+    "city": "Oakland",
+    "numPlayer": 16,
+    "championships": 16,
+    "rank": 20
+  }
+]

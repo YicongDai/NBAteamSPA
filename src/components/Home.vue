@@ -1,12 +1,11 @@
 <template>
   <div class="hero">
-    <h1 class="vue-title"></h1>
+    <h1 class="vue-title">Welcome to NBAteam website!!</h1>
 
     <table align="center">
       <tr>
         <td>
-          <p class="lead"><b><i> Welcome to NBAteam website!!</i></b>
-          <p>DO you have your favourite teams?</p>
+          <p class="lead"><b><i>DO you have your favourite teams? </i></b>
           <p>Just click <a href ="#/teams">here</a> to go to</p>
           <p>the team page and view your team</p>
         </td>
