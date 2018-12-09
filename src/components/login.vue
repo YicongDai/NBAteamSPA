@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <div class="head">
-      {{ msg }}
       <h1>login</h1>
     </div>
     <!--  panel   -->
@@ -28,7 +27,9 @@
     <div class="register">
       <button onclick="/home">create a new account</button>
     </div>
-
+    <div class="message">
+      {{msg}}
+    </div>
   </div>
 </template>
 
@@ -45,7 +46,7 @@ export default {
   methods: {
     login (form) {
       if (form.username !== 'root' || form.password !== 'root') {
-        this.msg = '您的用户名和密码不正确'
+        this.msg = 'username and password is invaild!'
       } else {
         this.$router.push({
           path: '/'
