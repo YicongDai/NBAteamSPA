@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <h3 class="vue-title"><i class="fa fa-info" style="padding: 3px"></i>{{messagetitle}}</h3>
-    <dfooter></dfooter>
+    <tfooter></tfooter>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     }
   },
   components: {
-    'dfooter': Footer
+    'tfooter': Footer
   }
 }
 </script>

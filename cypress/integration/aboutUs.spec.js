@@ -6,6 +6,6 @@ describe('About us page', () => {
   })
   it('show some information about the app', () => {
     cy.get('.vue-title').contains('About Us')
-    cy.get('.donation-footer').contains('here')
+    cy.get('.team-footer').contains('here')
   })
 })
