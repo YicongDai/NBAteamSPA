@@ -5,9 +5,6 @@
       <v-client-table :columns="columns" :data="teams" :options="options">
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editTeam(props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteTeam(props.row._id)"></a>
-        <a slot="child_row" slot-scope="props">
-          <div class="vue-message">The message is [ {{props.row.message}} ]</div>
-        </a>
       </v-client-table>
     </div>
   </div>
