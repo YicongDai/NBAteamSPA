@@ -6,7 +6,7 @@ describe('Add a team page', () => {
       .find('.nav-item:nth-child(3)').click()
   })
 
-  it('allows a valid donation to be submitted', () => {
+  it('allows a valid team to be submitted', () => {
     // Fill out web form
     cy.get('#name').type('Houton Rocket')
     cy.get('#city').type('Houston')
