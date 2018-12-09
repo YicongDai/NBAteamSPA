@@ -3,16 +3,17 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="teams" :options="options">
-
-          <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editTeam(props.row._id)"></a>
-          <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteTeam(props.row._id)"></a>
-
+        <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editTeam(props.row._id)"></a>
+        <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deleteTeam(props.row._id)"></a>
+        <a slot="child_row" slot-scope="props">
+          <div class="vue-message">The message is [ {{props.row.message}} ]</div>
+        </a>
       </v-client-table>
     </div>
   </div>
 </template>
-
 <script>
+
 import TeamService from '@/services/TeamService'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
@@ -23,13 +24,14 @@ export default {
   data () {
     return {
       messagetitle: ' Teams List ',
-      props: ['_id'],
-      teams: [],
-      errors: [],
       columns: ['_id', 'name', 'championships', 'rank', 'city', 'numPlayer', 'remove', 'edit'],
+      teams: [],
+      props: ['_id'],
+      errors: [],
       options: {
         perPage: 10,
         filterable: ['name', 'championships', 'rank'],
+        sortable: [ 'championships', 'rank', 'numPlayer' ],
         headings: {
           _id: 'ID',
           name: 'Name',
@@ -38,6 +40,10 @@ export default {
           championships: 'Championships',
           rank: 'Rank'
         }
+      },
+      uniqueKey: '_id',
+      orderBy: {
+        column: 'rank'
       }
     }
   },
@@ -105,7 +111,15 @@ export default {
     margin-bottom: 10px;
   }
   #app1 {
-    width: 70%;
+    width: 65%;
     margin: 0 auto;
+  }
+  .vue-pagination-ad {
+    text-align: center;
+  }
+  .vue-message {
+    text-align: left;
+    font-size: 17px;
+    margin-left: 30px;
   }
 </style>

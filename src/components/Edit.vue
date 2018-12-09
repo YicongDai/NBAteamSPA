@@ -19,9 +19,9 @@ export default {
   data () {
     return {
       team: {},
-      messagetitle: 'Update Team',
+      childDataLoaded: false,
       temp: {},
-      childDataLoaded: false
+      messagetitle: 'Update Team'
     }
   },
   components: {

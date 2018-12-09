@@ -1,16 +1,22 @@
 <template>
   <div class="hero">
     <h3 class="vue-title"><i class="fa fa-info" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <dfooter></dfooter>
   </div>
 </template>
 
 <script>
+import Footer from '@/components/Footer'
+
 export default {
   name: 'AboutUs',
   data () {
     return {
       messagetitle: ' About Us '
     }
+  },
+  components: {
+    'dfooter': Footer
   }
 }
 </script>
