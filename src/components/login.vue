@@ -58,96 +58,86 @@ export default {
 </script>
 
 <style scoped>
-  /*按照样图要求，添加一个浅灰色背景*/
   body{
     background-color: #F2F2F2;
   }
-
-  /*设置内容模块距离顶部一个有一段距离100px*/
   .content {
     margin-top: 80px;
   }
-  /*登录和注册按钮的整体样式*/
+
   .content button {
-    height: 30px;/*登录和注册按钮的高度*/
-    color:  white;/*登录和注册按钮字体颜色为白色*/
-    font-size: 18px;/*登录和注册按钮的字体大小*/
-    border: 0px;/*无边框*/
-    padding: 0px;/*无内边距*/
-    cursor: pointer;/*登录和注册按钮的选择时为手形状*/
+    height: 30px;
+    color:  white;
+    font-size: 18px;
+    border: 0px;
+    padding: 0px;
+    cursor: pointer;
   }
-
-  /*头部名称*/
   .content .head {
-    text-align: center;/*子内容居中*/
+    text-align: center;
   }
-  /*登录面板*/
   .content .panel {
-    background-color: white;/*登录面板背景颜色为白色*/
-    width: 302px;/*宽度为302px*/
-    text-align: center;/*子内容居中*/
-    margin: 0px auto;/*自身居中*/
-    padding-top: 10px;/*顶部的内边距为20px*/
-    padding-bottom: 10px;/*底部的内边距为20px*/
-    border: 1px solid #ddd;/*边框颜色为灰色*/
-    border-radius: 5px;/*边框边角有5px的弧度*/
+    background-color: white;
+    width: 302px;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 
   }
-  /*购物主页购物面板*/
   .content .panel1 {
-    background-color: white;/*购物主页面板背景颜色为白色*/
-    width: 1000px;/*宽度为600px*/
-    text-align: center;/*子内容居中*/
-    margin: 0px auto;/*自身居中*/
-    border: 1px solid #ddd;/*边框颜色为灰色*/
-    border-radius: 5px;/*边框边角有5px的弧度*/
+    background-color: white;
+    width: 1000px;
+    text-align: center;
+    margin: 0px auto;/
+    border: 1px solid #ddd;
+    border-radius: 5px;
 
   }
-
-  /*登录和密码组*/
   .content .panel .group {
-    text-align: left;/*子内容居中*/
-    width: 262px;/*宽度为262px*/
-    margin: 0px auto 20px;/*自身居中，并距离底部有20px的间距*/
+    text-align: left;
+    width: 262px;
+    margin: 0px auto 20px;
   }
   .content .panel .group label {
-    line-height: 30px;/*高度为30px*/
-    font-size: 18px;/*字体大小为18px*/
+    line-height: 30px;
+    font-size: 18px;
   }
   .content .panel .group input {
-    display: block;/*设置为块，是为了让输入框独占一行*/
-    width: 250px;/*宽度为250px*/
-    height: 30px;/*高度为30px*/
-    border: 1px solid #ddd;/*输入框的边框*/
-    padding: 0px 0px 0px 10px;/*左边内边距为10px，显得美观*/
-    font-size: 16px;/*字体大小*/
+    display: block;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #ddd;
+    padding: 0px 0px 0px 10px;
+    font-size: 16px;
   }
   .content .panel .group input:focus{
 
-    border-left: 1px solid #CC865E;/*当输入框成为焦点时，左边框颜色编程褐色*/
+    border-left: 1px solid #CC865E;
   }
   .content .panel .login button {
-    background-color: #CC865E;/*按钮的背景颜色*/
-    width: 130px;/*按钮的宽度*/
+    background-color: #CC865E;
+    width: 130px;
   }
   .content .panel .login button:hover {
-    background-color: white;/*按钮选中后背景颜色为白色*/
-    color:  #CC865E;/*按钮选中后字体颜色为褐色*/
-    border: 1px solid #CC865E;/*按钮选中后边框颜色为褐色*/
+    background-color: white;
+    color:  #CC865E;
+    border: 1px solid #CC865E;
   }
-  /*注册按钮*/
   .content .register {
-    text-align: center;/*子内容居中*/
-    margin-top: 20px;/*顶部的内边距为20px*/
+    text-align: center;
+    margin-top: 20px;
   }
   .content .register button {
-    background-color: #466BAF;/*按钮的背景颜色为蓝色*/
-    width: 180px;/*按钮的宽度*/
+    background-color: #466BAF;
+    width: 180px;
   }
 
   .content .register button:hover {
-    background-color: white;/*按钮选中后背景颜色为白色*/
-    color: #466BAF;/*按钮选中后字体颜色为蓝色*/
-    border: 1px solid #466BAF;/*按钮选中后边框颜色为蓝色*/
+    background-color: white;
+    color: #466BAF;
+    border: 1px solid #466BAF;
   }
 </style>

@@ -11,7 +11,4 @@ describe('Login page', () => {
     cy.get('button[type=submit]').click()
     cy.url().should('include', '/')
   })
-  it('show some error about the login', () => {
-    cy.get('button[type=submit]').click()
-  })
 })
