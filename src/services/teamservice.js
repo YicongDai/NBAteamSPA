@@ -20,7 +20,7 @@ export default {
   putTeam (id, team) {
     console.log('REQUESTING ' + team._id + ' ' +
       JSON.stringify(team, null, 5))
-    return Api().put(`/teams/${id}`, team,
+    return Api().put(`/team/${id}`, team,
       { headers: {'Content-type': 'application/json'} })
   }
 }
