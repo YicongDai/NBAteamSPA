@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Teams from '@/components/Teams'
-import AddTeam from '@/components/Addteam'
+import Addteam from '@/components/Addteam'
 import AboutUs from '@/components/AboutUs'
 import ContactUs from '@/components/ContactUs'
 import Edit from '@/components/Edit'
@@ -24,7 +24,7 @@ export default new Router({
     {
       path: '/addTeam',
       name: 'AddTeam',
-      component: AddTeam
+      component: Addteam
     }, {
       path: '/about',
       name: 'AboutUs',
