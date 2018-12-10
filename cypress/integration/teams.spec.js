@@ -1,12 +1,12 @@
 
 describe('Manage Teams page', () => {
   beforeEach(() => {
-    cy.request('http://localhost:3000/teams')
+    cy.request('https://nbawebtest.herokuapp.com/teams')
       .its('body')
       .then((teams) => {
         teams.forEach((element) => {
           cy.request('DELETE',
-            'http://localhost:3000/teams/' + element._id)
+            'https://nbawebtest.herokuapp.com/teams/' + element._id)
         })
       })
     // Populate API's datastore
@@ -14,7 +14,7 @@ describe('Manage Teams page', () => {
       .then((teams) => {
         teams.forEach((teams) => {
           cy.request('POST',
-            'http://localhost:3000/teams/', teams)
+            'https://nbawebtest.herokuapp.com/teams/', teams)
         })
       })
     cy.visit('/')
@@ -28,7 +28,6 @@ describe('Manage Teams page', () => {
     cy.get('tbody').find('tr:nth-child(3)').find('td:nth-child(7)').find('.fa').click()
     // Click confirmation button
     cy.get('button').contains('Delete').click()
-    cy.get('button').contains('OK').click()
     cy.get('tbody').find('tr').should('have.length', 3)
   })
   //

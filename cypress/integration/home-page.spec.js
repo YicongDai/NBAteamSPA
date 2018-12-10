@@ -29,7 +29,7 @@ describe('Home page', () => {
       cy.get('.navbar').contains('Manage').click()
       cy.url().should('include', '/teams')
       cy.get('.navbar').contains('Add').click()
-      cy.url().should('include', '/addTeam')
+      cy.url().should('include', '/team')
     })
   })
 })

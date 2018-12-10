@@ -5,7 +5,7 @@ describe('Login page', () => {
       .find('.nav-item:nth-child(3)').click()
   })
   it('show some information about the login', () => {
-    cy.get('h1').contains('Login.vue')
+    cy.get('h1').contains('login')
     cy.get('label').contains('username').next().type('root')
     cy.get('label').contains('password').next().type('root')
     cy.get('button[type=submit]').click()

@@ -17,7 +17,7 @@
         </div>
         <!--  login button    -->
         <div class="login">
-          <button type="submit" name="login" v-on:click="Login($data)">login</button>
+          <button type="submit" name="login" v-on:click="login($data)">login</button>
           <button type="reset" name="reset">reset</button>
         </div>
       </form>
