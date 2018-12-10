@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import TeamService from '@/services/TeamService'
+import TeamService from '@/services/teamservice'
 import TeamForm from '@/components/TeamForm'
 
 export default {
