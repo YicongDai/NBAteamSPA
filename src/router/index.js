@@ -22,8 +22,8 @@ export default new Router({
       component: Teams
     },
     {
-      path: '/addTeam',
-      name: 'AddTeam',
+      path: '/Addteam',
+      name: 'Addteam',
       component: Addteam
     }, {
       path: '/about',
