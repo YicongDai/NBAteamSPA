@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h1 class="vue-title">Welcome to NBAteam website!!</h1>
+    <h1 class="vue-title">Welcome to NBA website!!</h1>
 
     <table align="center">
       <tr>

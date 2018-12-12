@@ -4,7 +4,7 @@ describe('Home page', () => {
   })
 
   it('Shows a header', () => {
-    cy.get('.vue-title').should('contain', 'Welcome to NBAteam website!!')
+    cy.get('.vue-title').should('contain', 'Welcome to NBA website!!')
     cy.get('.lead').should('contain', 'DO you have your favourite teams?')
     cy.get('.lead').contains('DO you have your favourite teams?')
   })

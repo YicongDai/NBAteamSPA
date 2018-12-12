@@ -74,7 +74,7 @@ This project tries to build a NBA team client by Vue app, admin can login, view 
 
 . . . URL of the Travis build page for the Vue app,
 
-https://travis-ci.org/diarmuidoconnor/donationsSPA
+https://travis-ci.org/YicongDai/NBAteamSPA
 
 ## Automated Deployment.
 
