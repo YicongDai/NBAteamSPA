@@ -9,7 +9,6 @@
           <b-nav-item to="/#"><i class="fa fa-home" style="padding: 5px"> Home</i></b-nav-item>
           <b-nav-item to="/teams"><i class="fa fa-list" style="padding: 5px"> Manage teams</i></b-nav-item>
           <b-nav-item to="/team"><i class="fa fa-money" style="padding: 5px"> Add a team</i></b-nav-item>
-          <b-nav-item to="/map"><i class="fa fa-globe" style="padding: 5px"> Map</i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item to="/about"><i class="fa fa-info" style="padding: 5px"> About Us</i></b-nav-item>
@@ -43,7 +42,7 @@ export default {
     text-align: center;
     color: #2c3e50;
     padding-top: 20px;
-    /*background: url("./assets/homerbgyellow.png") repeat center top;*/
+    background: url("assets/bg_admin.jpg") repeat center top ;
   }
   .VueTables__sortable {
     cursor: pointer;
