@@ -7,6 +7,8 @@ import AboutUs from '@/components/AboutUs'
 import ContactUs from '@/components/ContactUs'
 import Edit from '@/components/Edit'
 import Login from '@/components/Login'
+import LoginMessage from '@/components/LoginMessage'
+import Logout from '@/components/Logout'
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +47,16 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/loginMessage',
+      name: 'LoginMessage',
+      component: LoginMessage
+    },
+    {
+      path: '/logout',
+      name: 'Logout',
+      component: Logout
     }
   ]
 })

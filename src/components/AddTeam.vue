@@ -8,13 +8,14 @@
         </div><!-- /col -->
       </div><!-- /row -->
     </div><!-- /container -->
+    <tfooter></tfooter>
   </div>
 </template>
 
 <script>
 import TeamService from '@/services/teamservice'
 import TeamForm from '@/components/TeamForm'
-
+import Footer from '@/components/Footer'
 export default {
   data () {
     return {
@@ -23,7 +24,8 @@ export default {
     }
   },
   components: {
-    'team-form': TeamForm
+    'team-form': TeamForm,
+    'tfooter': Footer
   },
   methods: {
     submitTeam: function (team) {

@@ -10,6 +10,8 @@ import VueSweetalert2 from 'vue-sweetalert2'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Vuex from 'vuex'
+import './axios'
+import store from './vuex'
 Vue.use(Vuex)
 Vue.use(ElementUI)
 Vue.use(BootstrapVue)
@@ -20,6 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

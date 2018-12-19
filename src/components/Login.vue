@@ -1,143 +1,98 @@
 <template>
-  <div class="content">
-    <div class="head">
-      <h1>login</h1>
-    </div>
-    <!--  panel   -->
-    <div class="panel">
-      <form >
-        <!--  username and password    -->
-        <div class="group">
-          <label>username</label>
-          <input  type="text" placeholder="please enter the username" name="username" v-model="username">
-        </div>
-        <div class="group">
-          <label>password</label>
-          <input type="password" placeholder="please enter the password" name="password" v-model="password">
-        </div>
-        <!--  login button    -->
-        <div class="login">
-          <button type="submit" name="login" v-on:click="login($data)">login</button>
-          <button type="reset" name="reset">reset</button>
-        </div>
-      </form>
-    </div>
-
-    <!--  register button    -->
-    <div class="register">
-      <button onclick="/home">create a new account</button>
-    </div>
-    <div class="message">
-      {{msg}}
-    </div>
+  <div class="hero">
+    <h3 class="vue-title">Log in</h3>
+    <el-row type="flex" justify="center">
+      <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
+        <el-form-item label="username:" class = "name" prop="name">
+          <el-input v-model="user.name" class=" input1"></el-input>
+        </el-form-item>
+        <el-form-item label="password:" class = "pass" prop="pass">
+          <el-input v-model="user.pass" type="password" class=" input2"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" icon="el-icon-upload" @click="login">login</el-button>
+        </el-form-item>
+      </el-form>
+    </el-row>
+    <tfooter></tfooter>
   </div>
 </template>
 
 <script>
+import Footer from '@/components/Footer'
 export default {
-  name: 'Login.vue',
-  data () {
-    return {
-      username: '',
-      password: '',
-      msg: ' '
+  methods: {
+    login () {
+      this.$refs.loginForm.validate((valid) => {
+        if (valid) {
+          if (this.user.name === 'admin' && this.user.pass === '123') {
+            this.$store.dispatch('login', this.user).then(() => {
+              this.$notify({
+                type: 'success',
+                message: 'Welcome,' + this.user.name + '!',
+                duration: 3000
+              })
+              this.$router.replace('/')
+            })
+          } else {
+            this.$message({
+              type: 'error',
+              message: 'username or password is incorrect!!',
+              showClose: true
+            })
+          }
+        } else {
+          return false
+        }
+      })
     }
   },
-  methods: {
-    login (form) {
-      if (form.username !== 'root' || form.password !== 'root') {
-        this.msg = 'username and password is invaild!'
-      } else {
-        this.$router.push({
-          path: '/'
-        })
+  data () {
+    return {
+      user: {},
+      rules: {
+        name: [
+          {required: true, message: 'username must be required', trigger: 'blur'}
+        ],
+        pass: [
+          {required: true, message: 'password must be required', trigger: 'blur'}
+        ]
       }
     }
+  },
+  components: {
+    'tfooter': Footer
   }
 }
 </script>
 
 <style scoped>
-  body{
-    background-color: #F2F2F2;
-  }
-  .content {
-    margin-top: 80px;
-  }
-
-  .content button {
-    height: 30px;
-    color:  white;
-    font-size: 18px;
-    border: 0px;
-    padding: 0px;
-    cursor: pointer;
-  }
-  .content .head {
+  .vue-title {
+    margin-top: 30px;
     text-align: center;
+    font-size: 45pt;
+    margin-bottom: 10px;
   }
-  .content .panel {
-    background-color: white;
-    width: 302px;
-    text-align: center;
-    margin: 0px auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-
-  }
-  .content .panel1 {
-    background-color: white;
-    width: 1000px;
-    text-align: center;
-    margin: 0px auto;/
-    border: 1px solid #ddd;
-    border-radius: 5px;
-
-  }
-  .content .panel .group {
-    text-align: left;
-    width: 262px;
-    margin: 0px auto 20px;
-  }
-  .content .panel .group label {
+  .name{
     line-height: 30px;
-    font-size: 18px;
+    font-size: 20px;
   }
-  .content .panel .group input {
+  .pass{
+    line-height: 30px;
+    font-size: 20px;
+  }
+  .input1{
     display: block;
     width: 250px;
     height: 30px;
-    border: 1px solid #ddd;
     padding: 0px 0px 0px 10px;
     font-size: 16px;
   }
-  .content .panel .group input:focus{
-
-    border-left: 1px solid #CC865E;
-  }
-  .content .panel .login button {
-    background-color: #CC865E;
-    width: 130px;
-  }
-  .content .panel .login button:hover {
-    background-color: white;
-    color:  #CC865E;
-    border: 1px solid #CC865E;
-  }
-  .content .register {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .content .register button {
-    background-color: #466BAF;
-    width: 180px;
-  }
-
-  .content .register button:hover {
-    background-color: white;
-    color: #466BAF;
-    border: 1px solid #466BAF;
+  .input2{
+    display: block;
+    width: 250px;
+    height: 30px;
+    padding: 0px 0px 0px 10px;
+    font-size: 16px;
   }
 </style>
