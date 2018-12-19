@@ -6,8 +6,8 @@ describe('Login page', () => {
   })
   it('show some information about the login', () => {
     cy.get('h1').contains('login')
-    cy.get('label').contains('username').next().type('root')
-    cy.get('label').contains('password').next().type('root')
+    cy.get('label').contains('username').next().type('admin')
+    cy.get('label').contains('password').next().type('123')
     cy.get('button[type=submit]').click()
     cy.url().should('include', '/')
   })
