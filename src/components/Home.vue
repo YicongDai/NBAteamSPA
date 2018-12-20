@@ -6,7 +6,7 @@
       <tr>
         <td>
           <p class="lead"><b><i>DO you have your favourite teams? </i></b>
-          <p>Just click <a href ="#/teams">here</a> to go to</p>
+          <p>Just click <a href ="#/viewteams">here</a> to go to</p>
           <p>the team page and view your team</p>
         </td>
         <td>

@@ -10,8 +10,9 @@
           <el-input v-model="user.pass" type="password" class=" input2"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="el-icon-upload" @click="login">login</el-button>
+          <el-button type="primary" icon="el-icon-upload" class="button" @click="login">login</el-button>
         </el-form-item>
+        <img v-on:click="githubClick" src="../assets/github.png" />sign in with github
       </el-form>
     </el-row>
     <tfooter></tfooter>
@@ -45,6 +46,15 @@ export default {
           return false
         }
       })
+    },
+    githubClick: function () {
+      window.location.href = 'https://github.com/login/oauth/authorize?client_id=a154000b74eb59d3a760&redirect_uri=http://localhost:8080/#/login'
+    },
+    getUrlData: function (name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+      var r = window.location.search.substr(1).match(reg)
+      if (r != null) { return unescape(r[2]) }
+      return null
     }
   },
   data () {
@@ -62,6 +72,33 @@ export default {
   },
   components: {
     'tfooter': Footer
+  },
+  created: function () {
+    var code = this.getUrlData('code') || ''
+    if (code === '') {
+      return
+    }
+    this.$http.get('http://localhost:8080/api/github/user_info',
+      {
+        params: {
+          code: code
+        }
+      }
+    ).then((response) => {
+      if (response.data.status === 100) {
+        this.user.name = response.data.data.login
+        this.$store.dispatch('login', this.user).then(() => {
+          this.$notify({
+            type: 'success',
+            message: 'Welcome,' + this.user.name + '!',
+            duration: 3000
+          })
+          this.$router.replace('/')
+        })
+      } else {
+      }
+    }, (response) => {
+    })
   }
 }
 </script>
@@ -86,5 +123,12 @@ export default {
     height: 30px;
     padding: 0px 0px 0px 10px;
     font-size: 16px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .button{
+    text-align: center;
   }
 </style>
