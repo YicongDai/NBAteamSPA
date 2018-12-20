@@ -11,7 +11,7 @@
           <b-nav-item to="/teams"><i class="fa fa-list" style="padding: 5px"> Manage teams</i></b-nav-item>
           </div>
           <div v-else-if ="this.$store.state.user === undefined">
-          <b-nav-item to="/viewteams"><i class="fa fa-list" style="padding: 5px"> Manage teams</i></b-nav-item>
+          <b-nav-item to="/viewteams"><i class="fa fa-list" style="padding: 5px"> View teams</i></b-nav-item>
         </div>
           <b-nav-item to="/team"><i class="fa fa-money" style="padding: 5px"> Add a team</i></b-nav-item>
         </b-navbar-nav>
