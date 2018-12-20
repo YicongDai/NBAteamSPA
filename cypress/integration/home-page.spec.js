@@ -15,7 +15,6 @@ describe('Home page', () => {
       cy.get('.navbar').contains('Home')
       cy.get('.navbar-nav:nth-child(1)').within(() => {
         cy.get('.nav-item:first').should('contain', 'Home')
-        cy.get('.nav-item:nth-child(2)').should('contain', 'Manage teams')
         cy.get('.nav-item:nth-child(3)').should('contain', 'Add a team')
       })
       cy.get('.navbar-nav:nth-child(2)').within(() => {
@@ -26,7 +25,7 @@ describe('Home page', () => {
 
     it('Redirects when links are clicked', () => {
       cy.get('.navbar').contains('Manage').click()
-      cy.url().should('include', '/teams')
+      cy.url().should('include', '/viewteams')
       cy.get('.navbar').contains('Add').click()
       cy.url().should('include', '/team')
     })
