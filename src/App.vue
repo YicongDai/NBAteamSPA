@@ -7,7 +7,12 @@
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
           <b-nav-item to="/#"><i class="fa fa-home" style="padding: 5px"> Home</i></b-nav-item>
+          <div v-if="this.$store.state.user !== undefined">
           <b-nav-item to="/teams"><i class="fa fa-list" style="padding: 5px"> Manage teams</i></b-nav-item>
+          </div>
+          <div v-else-if ="this.$store.state.user === undefined">
+          <b-nav-item to="/viewteams"><i class="fa fa-list" style="padding: 5px"> Manage teams</i></b-nav-item>
+        </div>
           <b-nav-item to="/team"><i class="fa fa-money" style="padding: 5px"> Add a team</i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
