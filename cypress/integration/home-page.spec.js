@@ -17,7 +17,6 @@ describe('Home page', () => {
         cy.get('.nav-item:first').should('contain', 'Home')
         cy.get('.nav-item:nth-child(2)').should('contain', 'Manage teams')
         cy.get('.nav-item:nth-child(3)').should('contain', 'Add a team')
-        cy.get('.nav-item:nth-child(4)').should('contain', 'Map')
       })
       cy.get('.navbar-nav:nth-child(2)').within(() => {
         cy.get('.nav-item:first').should('contain', 'About')
